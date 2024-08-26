@@ -49,17 +49,24 @@ void* thread_function(void* ptr) {
     int found2 = 0;
     // Tenta todas as combinações possíveis
     for (int i = 0; i < NUM_LETRAS && !found; ++i) {
+
         word_aux[0] = ASCII_A + i;
         for (int j = 0; j < NUM_LETRAS && !found; ++j) {
+
             word_aux[1] = ASCII_A + j;
             for (int k = 0; k < NUM_LETRAS && !found; ++k) {
+
                 word_aux[2] = ASCII_A + k;
                 for (int l = 0; l < NUM_LETRAS && !found; ++l) {
+
                     word_aux[3] = ASCII_A + l;
                     std::string encrypted = encrypt(word_aux);
+
                     if (encrypted == palavra) {
+
                         found2++;
                         std::cout << "Palavra ["<< found2 << "] para: '" << palavra << "': " << word_aux << std::endl;
+                        
                         if (found2 == 2)
                         {
                             std::cout << std::endl;
@@ -97,7 +104,7 @@ int main() {
 
         pthread_t threads[10];
 
-        for (size_t i = 0; i < vetor_word.size(); ++i) {
+        for (int i = 0; i < vetor_word.size(); ++i) {
 
             Struct_palavra* data = new Struct_palavra{vetor_word[i]}; // * Usando o new ele ja aloca o espaco para a string tambem
 
