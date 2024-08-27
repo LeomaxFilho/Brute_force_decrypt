@@ -12,10 +12,6 @@
 #define TAMANHO_SENHA 4
 
 std::string encrypt(const std::string& str) {
-    if (str.length() != TAMANHO_SENHA) {
-        std::cerr << "Erro: A string deve ter exatamente " << TAMANHO_SENHA << " caracteres.\n";
-        exit(EXIT_FAILURE);
-    }
 
     std::string str_result(TAMANHO_SENHA, '\0');
     for (int i = 0; i < TAMANHO_SENHA; i++) {
